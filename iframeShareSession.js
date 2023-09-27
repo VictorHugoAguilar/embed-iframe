@@ -199,8 +199,7 @@ const onLoad = function onLoad() {
           // to fix the problem with safari (>=14), saving the data in localStorage instead sessionStorage
           if (browserName === 'safari' && parseInt(browserVersion, 10) >= 14) {
             saveDataInLocalStorage(tsec, consumerId, loginUserInfo);
-          } 
-          if (browserName === 'firefox' ) {
+          } else {
             console.log(`🚧 store data in storage: ${loginUserInfo}`);
             saveDataInSessionStorage(tsec, consumerId, loginUserInfo);
             saveDataInLocalStorage(tsec, consumerId, loginUserInfo);
