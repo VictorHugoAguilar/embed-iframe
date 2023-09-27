@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ES" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta name="Description" content="BBVA Net cash - Redirect">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=11;IE=edge"/>
+    <meta http-equiv="Cache-control" content="no-cache"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta name="HandheldFriendly" content="True"/>
+    <meta name="robots" content="nofollow, noindex">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes'/>
+
+    <title>BBVA Net Share - Session</title>
+    <style>
+      .row{
+        margin-bottom: 1em;
+        margin-left: 10px;
+      }
+      #success-btn{
+        margin-left: 30px;
+        margin-top: 20px
+      }
+      #fail-btn{
+        margin-left: 30px;
+        margin-top: 20px
+      }
+      .output-messages{
+        margin-top: 20px;
+        margin-left: 30px;
+        margin-right: 40px;
+      }
+    </style>
+    <script>
+      window.IntlMsg = window.IntlMsg || {};
+      window.IntlMsg.lang = 'es-ES';
+
+      // the app identificator, must match with the provided from the parent
+      const aap = '10000207';
+      // the origin identificator, must match with the provided from the parent
+      const loginCoexistenceOrigin = 'https://qa-bbva-cells-files.s3.amazonaws.com';
+      // to store the information of the userContext, this variable depends on
+      // the configuration of the userContext,, example: for mx 'senda-mx-context'
+      const bbvaBtgeLoginUserInfo = 'senda-mx-context';
+    </script>
+    <script src="./iframeShareSession.js"></script>
+  </head>
+
+  <body aria-hidden="true">
+    <div class="row align-items-start">
+      <div class="row">
+        <div class="col">
+          <button id="success-btn" type="button"
+            class="btn btn-outline-success btn-block"> OK </button>
+          <button id="fail-btn" type="button"
+            class="btn btn-outline-danger btn-block"> KO </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="card output-messages">
+            <h3>Data from iframe:</h3>
+            <div id="output" class="card-body text-left"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
