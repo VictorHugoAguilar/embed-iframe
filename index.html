@@ -22,10 +22,17 @@
     <button id="guardar">Guardar</button>
     <hr>
     <div>
-        <h2>Datos del Usuario</h2>
+        <h2>Datos del Usuario In Session</h2>
         <p>tsec: <span id="showTsec"></span></p>
         <p>consumerId: <span id="showConsumerId"></span></p>
         <p>bbvaBtgeLoginUserInfo: <span id="showBbvaBtgeLoginUserInfo"></span></p>
+    </div>
+    <hr>
+    <div>
+        <h2>Datos del Usuario In Local</h2>
+        <p>tsec: <span id="local_showTsec"></span></p>
+        <p>consumerId: <span id="local_showConsumerId"></span></p>
+        <p>bbvaBtgeLoginUserInfo: <span id="local_showBbvaBtgeLoginUserInfo"></span></p>
     </div>
 
     <script>
@@ -38,6 +45,14 @@
             document.getElementById('showTsec').textContent = tsec;
             document.getElementById('showConsumerId').textContent = consumerId;
             document.getElementById('showBbvaBtgeLoginUserInfo').textContent = bbvaBtgeLoginUserInfo;
+
+            const local_tsec = localStorage.getItem('tsec') || 'No definido';
+            const local_consumerId = localStorage.getItem('consumerId') || 'No definida';
+            const local_bbvaBtgeLoginUserInfo = localStorage.getItem('bbvaBtgeLoginUserInfo') || 'No definida';
+
+            document.getElementById('local_showTsec').textContent = tsec;
+            document.getElementById('local_showConsumerId').textContent = consumerId;
+            document.getElementById('local_showBbvaBtgeLoginUserInfo').textContent = bbvaBtgeLoginUserInfo;
         }
 
         // Función para guardar datos del usuario en sessionStorage
