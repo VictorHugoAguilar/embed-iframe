@@ -285,4 +285,4 @@ const onLoad = function onLoad() {
 };
 
 // print data when an event is received
-window.addEventListener('load', onLoad);ﬁ
+window.addEventListener('load', onLoad);
