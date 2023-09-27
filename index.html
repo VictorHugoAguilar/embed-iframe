@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App de Ejemplo con sessionStorage</title>
+</head>
+<body>
+    <h1>App de Ejemplo con sessionStorage</h1>
+    <div>
+        <label for="tsec">Tsec:</label>
+        <input type="text" id="tsec">
+    </div>
+    <div>
+        <label for="consumerId">ConsumerId:</label>
+        <input type="text" id="consumerId">
+    </div>
+    <div>
+        <label for="bbvaBtgeLoginUserInfo">bbvaBtgeLoginUserInfo:</label>
+        <input type="text" id="bbvaBtgeLoginUserInfo">
+    </div>
+    <button id="guardar">Guardar</button>
+    <hr>
+    <div>
+        <h2>Datos del Usuario</h2>
+        <p>tsec: <span id="tsec"></span></p>
+        <p>consumerId: <span id="consumerId"></span></p>
+        <p>bbvaBtgeLoginUserInfo: <span id="bbvaBtgeLoginUserInfo"></span></p>
+    </div>
+
+    <script>
+        // Función para mostrar datos del usuario desde sessionStorage
+        function mostrarDatosUsuario() {
+            const tsec = sessionStorage.getItem('tsec') || 'No definido';
+            const consumerId = sessionStorage.getItem('consumerId') || 'No definida';
+            const bbvaBtgeLoginUserInfo = sessionStorage.getItem('bbvaBtgeLoginUserInfo') || 'No definida';
+
+            document.getElementById('tsec').textContent = tsec;
+            document.getElementById('consumerId').textContent = consumerId;
+            document.getElementById('bbvaBtgeLoginUserInfo').textContent = bbvaBtgeLoginUserInfo;
+        }
+
+        // Función para guardar datos del usuario en sessionStorage
+        function guardarDatosUsuario() {
+            const tsec = document.getElementById('tsec').value;
+            const consumerId = document.getElementById('consumerId').value;
+            const bbvaBtgeLoginUserInfo = document.getElementById('bbvaBtgeLoginUserInfo').value;
+
+            sessionStorage.setItem('tsec', tsec);
+            sessionStorage.setItem('consumerId', consumerId);
+            sessionStorage.setItem('bbvaBtgeLoginUserInfo', bbvaBtgeLoginUserInfo);
+
+            mostrarDatosUsuario();
+        }
+
+        // Escuchar cambios en los campos de entrada y guardar automáticamente en sessionStorage
+        document.getElementById('guardar').addEventListener('click', guardarDatosUsuario);
+        document.getElementById('tsec').addEventListener('input', guardarDatosUsuario);
+        document.getElementById('consumerId').addEventListener('input', guardarDatosUsuario);
+        document.getElementById('bbvaBtgeLoginUserInfo').addEventListener('input', guardarDatosUsuario);
+
+        // Escuchar cambios en el almacenamiento (sessionStorage)
+        window.addEventListener('storage', (event) => {
+            if (event.key === 'tsec' || event.key === 'consumerId' || event.key === 'bbvaBtgeLoginUserInfo') {
+                mostrarDatosUsuario();
+            }
+        });
+
+        // Mostrar datos del usuario al cargar la página
+        mostrarDatosUsuario();
+    </script>
+</body>
+</html>
