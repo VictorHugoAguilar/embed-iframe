@@ -50,9 +50,9 @@
             const local_consumerId = localStorage.getItem('consumerId') || 'No definida';
             const local_bbvaBtgeLoginUserInfo = localStorage.getItem('bbvaBtgeLoginUserInfo') || 'No definida';
 
-            document.getElementById('local_showTsec').textContent = tsec;
-            document.getElementById('local_showConsumerId').textContent = consumerId;
-            document.getElementById('local_showBbvaBtgeLoginUserInfo').textContent = bbvaBtgeLoginUserInfo;
+            document.getElementById('local_showTsec').textContent = local_tsec;
+            document.getElementById('local_showConsumerId').textContent = local_consumerId;
+            document.getElementById('local_showBbvaBtgeLoginUserInfo').textContent = local_bbvaBtgeLoginUserInfo;
         }
 
         // Función para guardar datos del usuario en sessionStorage
