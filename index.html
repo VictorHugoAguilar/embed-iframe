@@ -42,13 +42,17 @@
 
         // Función para guardar datos del usuario en sessionStorage
         function guardarDatosUsuario() {
+            const _tsec = sessionStorage.getItem('tsec') || 'No definido';
+            const _consumerId = sessionStorage.getItem('consumerId') || 'No definida';
+            const _bbvaBtgeLoginUserInfo = sessionStorage.getItem('bbvaBtgeLoginUserInfo') || 'No definida';
+            
             const tsec = document.getElementById('tsec').value;
             const consumerId = document.getElementById('consumerId').value;
             const bbvaBtgeLoginUserInfo = document.getElementById('bbvaBtgeLoginUserInfo').value;
 
-            sessionStorage.setItem('tsec', tsec);
-            sessionStorage.setItem('consumerId', consumerId);
-            sessionStorage.setItem('bbvaBtgeLoginUserInfo', bbvaBtgeLoginUserInfo);
+            sessionStorage.setItem('tsec', _tsec !== tsec ? tsec : _tsec);
+            sessionStorage.setItem('consumerId', _consumerId !== consumerId ? consumerId : _consumerId  );
+            sessionStorage.setItem('bbvaBtgeLoginUserInfo', _bbvaBtgeLoginUserInfo !== bbvaBtgeLoginUserInfo ? bbvaBtgeLoginUserInfo : _bbvaBtgeLoginUserInfo);
 
             mostrarDatosUsuario();
         }
