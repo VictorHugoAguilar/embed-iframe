@@ -23,9 +23,9 @@
     <hr>
     <div>
         <h2>Datos del Usuario</h2>
-        <p>tsec: <span id="tsec"></span></p>
-        <p>consumerId: <span id="consumerId"></span></p>
-        <p>bbvaBtgeLoginUserInfo: <span id="bbvaBtgeLoginUserInfo"></span></p>
+        <p>tsec: <span id="showTsec"></span></p>
+        <p>consumerId: <span id="showConsumerId"></span></p>
+        <p>bbvaBtgeLoginUserInfo: <span id="showBbvaBtgeLoginUserInfo"></span></p>
     </div>
 
     <script>
@@ -35,9 +35,9 @@
             const consumerId = sessionStorage.getItem('consumerId') || 'No definida';
             const bbvaBtgeLoginUserInfo = sessionStorage.getItem('bbvaBtgeLoginUserInfo') || 'No definida';
 
-            document.getElementById('tsec').textContent = tsec;
-            document.getElementById('consumerId').textContent = consumerId;
-            document.getElementById('bbvaBtgeLoginUserInfo').textContent = bbvaBtgeLoginUserInfo;
+            document.getElementById('showTsec').textContent = tsec;
+            document.getElementById('showConsumerId').textContent = consumerId;
+            document.getElementById('showBbvaBtgeLoginUserInfo').textContent = bbvaBtgeLoginUserInfo;
         }
 
         // Función para guardar datos del usuario en sessionStorage
