@@ -42,6 +42,10 @@
             const consumerId = sessionStorage.getItem('consumerId') || 'No definida';
             const bbvaBtgeLoginUserInfo = sessionStorage.getItem('bbvaBtgeLoginUserInfo') || 'No definida';
 
+            document.getElementById('tsec').value = tsec;
+            document.getElementById('consumerId').value = consumerId;
+            document.getElementById('bbvaBtgeLoginUserInfo').value = bbvaBtgeLoginUserInfo;
+
             document.getElementById('showTsec').textContent = tsec;
             document.getElementById('showConsumerId').textContent = consumerId;
             document.getElementById('showBbvaBtgeLoginUserInfo').textContent = bbvaBtgeLoginUserInfo;
