@@ -20,6 +20,7 @@
         <input type="text" id="bbvaBtgeLoginUserInfo">
     </div>
     <button id="guardar">Guardar</button>
+    <button id="borrar">Borrar</button>
     <hr>
     <div>
         <h2>Datos del Usuario In Session</h2>
@@ -76,8 +77,21 @@
             mostrarDatosUsuario();
         }
 
+        function borrarDatosUsuario() {
+            sessionStorage.removeItem('tsec');
+            sessionStorage.removeItem('consumerId');
+            sessionStorage.removeItem('bbvaBtgeLoginUserInfo');
+
+            localStorage.removeItem('tsec');
+            localStorage.removeItem('consumerId');
+            localStorage.removeItem('bbvaBtgeLoginUserInfo');
+
+            mostrarDatosUsuario();
+        }
+
         // Escuchar cambios en los campos de entrada y guardar automáticamente en sessionStorage
         document.getElementById('guardar').addEventListener('click', guardarDatosUsuario);
+        document.getElementById('borrar').addEventListener('click', borrarDatosUsuario);
         document.getElementById('tsec').addEventListener('input', guardarDatosUsuario);
         document.getElementById('consumerId').addEventListener('input', guardarDatosUsuario);
         document.getElementById('bbvaBtgeLoginUserInfo').addEventListener('input', guardarDatosUsuario);
